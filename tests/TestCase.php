@@ -29,7 +29,7 @@ class TestCase extends Orchestra
         // Set default config for tests
         $app['config']->set('monitor-agent.domains', [
             'https://example.com',
-            'https://another-site.com'
+            'https://another-site.com',
         ]);
         $app['config']->set('monitor-agent.interval', 60);
     }

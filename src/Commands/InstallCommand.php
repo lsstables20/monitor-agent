@@ -3,6 +3,7 @@
 namespace Twenty20\MonitorAgent\Commands;
 
 use Illuminate\Console\Command;
+
 use function Laravel\Prompts\info;
 
 class InstallCommand extends Command

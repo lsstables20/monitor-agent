@@ -3,8 +3,8 @@
 namespace Twenty20\MonitorAgent;
 
 use Spatie\LaravelPackageTools\Package;
-use Twenty20\MonitorAgent\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Twenty20\MonitorAgent\Commands\InstallCommand;
 
 class MonitorAgentServiceProvider extends PackageServiceProvider
 {
