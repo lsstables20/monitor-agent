@@ -1,10 +1,10 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace Twenty20\MonitorAgent\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use VendorName\Skeleton\SkeletonServiceProvider;
+use Twenty20\MonitorAgent\MonitorAgentServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -12,16 +12,26 @@ class TestCase extends Orchestra
     {
         parent::setUp();
 
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'VendorName\\Skeleton\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
+        // Factory::guessFactoryNamesUsing(
+        //     fn (string $modelName) => 'Twenty20\\MonitorAgent\\Database\\Factories\\'.class_basename($modelName).'Factory'
+        // );
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            SkeletonServiceProvider::class,
+            MonitorAgentServiceProvider::class,
         ];
+    }
+
+    protected function defineEnvironment($app)
+    {
+        // Set default config for tests
+        $app['config']->set('monitor-agent.domains', [
+            'https://example.com',
+            'https://another-site.com'
+        ]);
+        $app['config']->set('monitor-agent.interval', 60);
     }
 
     public function getEnvironmentSetUp($app)

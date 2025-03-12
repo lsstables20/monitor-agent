@@ -1,3 +1,6 @@
 # Changelog
 
-All notable changes to `:package_name` will be documented in this file.
+
+Config - set domain and interval
+trigger job at set interval
+ping the domain
